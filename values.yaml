@@ -1,11 +1,14 @@
 Apps:
-
-  - name: nginx
-    image: nginx:1.14.2
+  
+  app1: 
+    name: nginx
+    image: nginx:latest
     port: 80
     nodePort: 31001
-  
-  - name: mario
-    image: pengbai/docker-supermario
+
+  app2:
+    name: mario
+    image: nirmalnaveen/supermario
     port: 80
     nodePort: 31000
+

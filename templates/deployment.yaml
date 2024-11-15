@@ -1,8 +1,9 @@
- {{- range $key, $value := .Values.Apps }}
+{{- range $key, $value := .Values.Apps }}
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ $value.name }}
+  name: {{ $value.name }}-deployment
 spec:
   replicas: 1
   selector:
@@ -18,5 +19,4 @@ spec:
         image: {{ $value.image }}
         ports:
         - containerPort: {{ $value.port }}
-        
-{{- end }}    
+{{- end }}
